@@ -16,7 +16,31 @@ function Paavalikko() {
 function Footer() {
   return (
     <footer>
-      <h2> FPSTUKKU </h2>
+      <h2> FPSTUKKU - WALL OF SHAME </h2>
+
+      <div className='tiedot'>
+        <div className='one'>
+          <div>
+            <img src={require('./one200x200.png')} alt='' />
+          </div>
+          <div>
+            <h4> One - The Sex God </h4>
+            <a href='https://www.instagram.com/oskuisokangas_/'> Instagram </a>
+            <a href='https://www.youtube.com/@oaxyoaxy'> Youtube </a>
+          </div>
+        </div>
+
+        <div className='pertz'>
+          <div>
+            <img src={require('./pertz200x200.png')} alt='' />
+          </div>
+          <div>
+            <h4> PERTZ - IT TUKI </h4>
+            <a href='https://github.com/PERTZ42'> GitHub </a>
+            <a href='https://www.youtube.com/channel/UCW-Opd1byUToGjmG5B8exnw'> Youtube </a>
+          </div>
+        </div>
+      </div>
     </footer>
   )
 }
