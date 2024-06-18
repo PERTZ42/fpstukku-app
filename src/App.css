@@ -1,35 +1,39 @@
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  background-color: #434343;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  width: 100%;
 }
 
 nav {
+  display: flex;
+  justify-content: space-around;
   width: 100%;
-  background-color: teal;
+  background-color: burlywood;
+  margin: 0;
+  border: 2px solid black;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 1%;
+  color: black;
+}
+
+footer {
   display: flex;
+  padding: 0.5%;
+  background-color: peru;
+  border: 2px solid black;
+  color: darkslateblue;
 }
 
-nav div {
-  background-color: green;
-  padding: 0.25em;
-}
-
-nav div a {
-  color: red;
-}
-
-.jakaja {
-  display: flex;
-  justify-content: space-evenly;
-  padding-top: 1em;
-}
-
-.tekstialue {
-  width: 40%;
-}
+footer {}
 
 .treenikalenteri {
-  width: 40%;
+  background-color: wheat;
+  color: black;
+  padding: 1%;
+  border: 2px solid black;
+  margin: 1%;
 }
