@@ -35,7 +35,7 @@ class WebScraper:
             print(f"Error getting player name: {str(e)}")
             return None
 
-    def get_player_winrate(self, account_link):
+    def get_clubwinrate(self, account_link):
         if self.driver.current_url != account_link:
             if not self.navigate_to_url(account_link):
                 return None
@@ -139,11 +139,37 @@ class WebScraper:
     
         try:
             parent_div = self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'stat')))
-            print(parent_div)
             valuediv = re.sub(r'[^0-9]', '', parent_div.text)
             return valuediv
         except Exception as e:
             return e
+
+
+    def get_rating(self, leetify_profile_link):
+        if self.driver.current_url != leetify_profile_link:
+            if not self.navigate_to_url(leetify_profile_link):
+                return None
+
+        try:
+            parent_div = self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'ratings')))
+            valuediv = re.sub(r'[^0-9+-.]', '', parent_div.text)
+            return valuediv
+        except Exception as e:
+            return e
+
+    def get_player_winrate(self, leetify_profile_link):
+        if self.driver.current_url != leetify_profile_link:
+            if not self.navigate_to_url(leetify_profile_link):
+                return None
+
+        try:
+            parent_div = self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'cards')))
+            
+            valuediv = re.sub(r'[^0-9%]', '', parent_div.text)
+            return valuediv
+        except Exception as e:
+            return e
+
 
 
 
@@ -153,18 +179,18 @@ class WebScraper:
 
 scraper = WebScraper()
 
+
+# Testi
 account_link = "https://leetify.com/app/profile/76561198071068054"
+club_winrate = scraper.get_clubwinrate(account_link)
+print(f"Club Win Rate: {club_winrate}")
 
-# Get Player Name
+
+account_link = "https://leetify.com/app/profile/76561198071068054"
 player_name = scraper.get_player_name(account_link)
-print(f"Player Name: {player_name}")
+player_rating = scraper.get_rating(account_link)
+player_aim = scraper.get_aim_stat(account_link)
+player_winrate = scraper.get_player_winrate(account_link)
 
-# Get Player Win Rate
-win_rate = scraper.get_player_winrate(account_link)
-print(f"Win Rate: {win_rate}")
 
-# # Get Player Teammates
-# teammates = scraper.get_player_teammates(account_link)
-# print("Teammates:")
-# for teammate, teammate_link in teammates.items():
-#     print(f"{teammate}: {teammate_link}")
+print(f"name:{player_name} rating:{player_rating} aim:{player_aim} winrate:{player_winrate}")
