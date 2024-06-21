@@ -1,0 +1,17 @@
+import React from 'react'
+
+function PopupPlayer(props: any) {
+	return (props.trigger) ? (
+		<div className='video-popup'>
+			<div>
+				// <video controls width="250">
+				// 	<source src="https://www.youtube.com/shorts/DPrAmxveD3E" type="video/mp4" />
+				// </video>
+				<button className='close-button'> close </button>
+				{props.children}
+			</div>
+		</div>
+	) : "";
+}
+
+export default PopupPlayer

@@ -8,7 +8,7 @@ import re
 class WebScraper:
     def __init__(self):
         chrome_options = Options()
-        chrome_options.add_argument("--headless")
+        #chrome_options.add_argument("--headless")
         self.driver = webdriver.Chrome(options=chrome_options)  # Use appropriate webdriver for your browser
         self.wait = WebDriverWait(self.driver, 10)  # Adjust the timeout as needed
 
@@ -145,32 +145,29 @@ class WebScraper:
             return e
 
 
-    def get_rating(self, leetify_profile_link):
+    def get_stats(self, leetify_profile_link):
         if self.driver.current_url != leetify_profile_link:
             if not self.navigate_to_url(leetify_profile_link):
                 return None
 
         try:
-            parent_div = self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'ratings')))
+            parent_div = self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'stats')))
             valuediv = re.sub(r'[^0-9+-.]', '', parent_div.text)
             return valuediv
         except Exception as e:
             return e
 
-    def get_player_winrate(self, leetify_profile_link):
+    def get_winrate_ratings(self, leetify_profile_link):
         if self.driver.current_url != leetify_profile_link:
             if not self.navigate_to_url(leetify_profile_link):
                 return None
 
         try:
-            parent_div = self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'cards')))
-            
-            valuediv = re.sub(r'[^0-9%]', '', parent_div.text)
+            parent_div = self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'meta')))
+            valuediv = re.sub(r'[^0-9%-,.]', '', parent_div.text)
             return valuediv
         except Exception as e:
             return e
-
-
 
 
     def close_browser(self):
@@ -181,16 +178,9 @@ scraper = WebScraper()
 
 
 # Testi
-account_link = "https://leetify.com/app/profile/76561198071068054"
-club_winrate = scraper.get_clubwinrate(account_link)
-print(f"Club Win Rate: {club_winrate}")
 
+account = "https://leetify.com/app/profile/76561199390049021"
+stats = scraper.get_stats(account)
+winrate = scraper.get_winrate_ratings(account)
 
-account_link = "https://leetify.com/app/profile/76561198071068054"
-player_name = scraper.get_player_name(account_link)
-player_rating = scraper.get_rating(account_link)
-player_aim = scraper.get_aim_stat(account_link)
-player_winrate = scraper.get_player_winrate(account_link)
-
-
-print(f"name:{player_name} rating:{player_rating} aim:{player_aim} winrate:{player_winrate}")
+print(stats, winrate, values)

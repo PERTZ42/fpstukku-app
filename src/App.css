@@ -7,8 +7,6 @@ body {
 
 nav {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
   background-color: burlywood;
   margin: 0;
   border: 2px solid black;
@@ -16,8 +14,16 @@ nav {
 
 nav a {
   text-decoration: none;
+  font-size: x-large;
+  margin: 0.5%;
   padding: 1%;
   color: black;
+}
+
+nav a:hover {
+  background-color: lightgray;
+  border: 2px dotted black;
+  font-weight: bold;
 }
 
 footer {
@@ -29,9 +35,11 @@ footer {
 
 footer .tiedot {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
-  width: 60%;
+  text-wrap: nowrap;
+  padding: 1%;
+  gap: 1em;
 }
 
 footer .one {
@@ -58,15 +66,52 @@ footer img {
 
 footer .tiedot a {
   display: flex;
+  font-size: larger;
   text-decoration: none;
   color: black;
 }
 
-.treenikalenteri {
-  background-color: bisque;
-  color: black;
-  width: 40%;
-  padding: 1%;
+.sivu {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sivu .main {
+  width: 80%;
   border: 2px dotted black;
   margin: 1%;
+  background-color: wheat;
+  color: black;
+}
+
+.ads {
+  background-color: slategray;
+  border: 2px solid black;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+  gap: 1em;
+}
+
+.ads img {
+  border: 2px solid black;
+}
+
+.ads img:hover {
+  border: 2px solid red;
+}
+
+.open {
+  cursor: pointer;
+}
+
+.treenikalenteri {
+  margin: 1%;
+}
+
+.treenikalenteri iframe {
+  width: 100%;
+  min-height: 25em;
+  height: 50em;
 }
