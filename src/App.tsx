@@ -58,18 +58,18 @@ function BannerAd() {
         <div className='open' onClick={() => {
           return setButtonPopup(true);
         }}>
-          <img src={require('./seizethemeans.jpg')} width={300} alt='' />
+          <img className='seize' src={require('./seizethemeans.jpg')} width={300} alt='' />
         </div>
         <PopupPlayer trigger={buttonPopup} setTrigger={setButtonPopup}></PopupPlayer>
       </div>
       <div>
-        <a href='https://en.wikipedia.org/wiki/Billy_Herrington'>
-          <img src={require('./fight.gif')} width={300} alt='' />
+        <a href='https://steamcommunity.com/groups/fitnesstukkufps'>
+          <img src={require('./wewantyou.jpg')} width={300} alt='' />
         </a>
       </div>
       <div>
-        <a href='https://steamcommunity.com/groups/fitnesstukkufps'>
-          <img src={require('./wewantyou.jpg')} width={300} alt='' />
+        <a href='https://en.wikipedia.org/wiki/Billy_Herrington'>
+          <img src={require('./fight.gif')} width={300} alt='' />
         </a>
       </div>
     </div >
@@ -79,7 +79,7 @@ function BannerAd() {
 function Kalenteri() {
   return (
     <div className='treenikalenteri'>
-      <h3>Treenikalenteri</h3>
+      <h1>Treenikalenteri</h1>
       <iframe title='kalenteri' src="https://calendar.google.com/calendar/embed?height=NaN&wkst=2&ctz=Europe%2FHelsinki&bgcolor=%23ffffff&showTitle=0&showPrint=0&showTz=0&src=ZnBzdHVra3VAZ21haWwuY29t&src=ZmkuZmlubmlzaCNob2xpZGF5QGdyb3VwLnYuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%230B8043&color=%2333B679"></iframe>
     </div >
   )
@@ -111,6 +111,7 @@ function App() {
 
       <Footer></Footer>
     </div >
+
   )
 }
 

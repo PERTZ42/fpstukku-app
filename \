@@ -1,17 +1,140 @@
-import React from 'react'
-
-function PopupPlayer(props: any) {
-	return (props.trigger) ? (
-		<div className='video-popup'>
-			<div>
-				// <video controls width="250">
-				// 	<source src="https://www.youtube.com/shorts/DPrAmxveD3E" type="video/mp4" />
-				// </video>
-				<button className='close-button'> close </button>
-				{props.children}
-			</div>
-		</div>
-	) : "";
+body {
+  background-color: #374151;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  width: 100%;
 }
 
-export default PopupPlayer
+nav {
+  display: flex;
+  background-color: burlywood;
+  margin: 0;
+  border: 2px solid black;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: x-large;
+  margin: 0.5%;
+  padding: 1%;
+  color: black;
+}
+
+nav a:hover {
+  background-color: lightgray;
+  border: 2px dotted black;
+  font-weight: bold;
+}
+
+footer {
+  padding: 0.5%;
+  background-color: burlywood;
+  border: 2px solid black;
+  color: darkslateblue;
+}
+
+footer .tiedot {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-wrap: nowrap;
+  padding: 1%;
+  gap: 1em;
+}
+
+footer .one {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  padding: 1%;
+  border: 2px solid black;
+}
+
+footer .pertz {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  padding: 1%;
+  border: 2px solid black;
+}
+
+footer img {
+  padding: 0;
+  margin: 0;
+  border: 2px solid black;
+}
+
+footer .tiedot a {
+  display: flex;
+  font-size: larger;
+  text-decoration: none;
+  color: black;
+}
+
+.sivu {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sivu .main {
+  width: 80%;
+  border: 2px dotted black;
+  left: 50%;
+  margin: 2em 0;
+  padding: 4em;
+  box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+  background: #fffef0;
+  filter: url(#wavy2);
+}
+
+.ads {
+  background-color: slategray;
+  border: 2px solid black;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+  gap: 1em;
+}
+
+.ads .seize {
+  animation-name: banner;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes banner {
+  from {
+    border: 2px solid black;
+    filter: blur(5px);
+  }
+
+  to {
+    border: 2px solid red;
+    filter: blur(0);
+  }
+}
+
+.ads img {
+  border: 2px solid black;
+}
+
+.ads img:hover {
+  border: 2px solid red;
+  animation: step-end;
+}
+
+.open {
+  cursor: pointer;
+}
+
+.treenikalenteri {
+  margin: 1%;
+}
+
+.treenikalenteri iframe {
+  width: 100%;
+  min-height: 25em;
+  height: 50em;
+}
