@@ -55,6 +55,10 @@ footer .tiedot {
   gap: 1em;
 }
 
+footer .tiedot a:hover {
+  color: darkred;
+}
+
 footer .one {
   display: flex;
   flex-direction: row;
