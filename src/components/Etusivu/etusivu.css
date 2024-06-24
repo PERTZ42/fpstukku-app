@@ -1,3 +1,8 @@
 .etusivuteksti {
 	font-size: larger;
 }
+
+.etusivuteksti iframe {
+	width: 32em;
+	height: 18em;
+}

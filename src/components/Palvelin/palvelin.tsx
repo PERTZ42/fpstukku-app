@@ -1,4 +1,5 @@
 import React from "react";
+import './palvelin.css'
 
 function Palvelin(props: any) {
 	return (props.trigger) ? (

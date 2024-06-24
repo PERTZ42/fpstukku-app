@@ -86,11 +86,11 @@ footer .tiedot a {
 
 .sivu {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .sivu .main {
-  width: 75%;
   left: 50%;
   margin: 2em 1%;
   padding: 4em;
@@ -103,7 +103,7 @@ footer .tiedot a {
   background-color: burlywood;
   border: 2px dotted black;
   padding: 1%;
-  display: flex;
+  display: flexbox;
   flex-direction: column;
   box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
   margin: 1%;
