@@ -152,4 +152,6 @@ for account in tukku_accounts:
     scraper.stats(account, file)
     scraper.winrate(account, file)
 
+
+
 file.close()

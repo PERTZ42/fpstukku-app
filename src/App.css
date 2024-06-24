@@ -4,28 +4,24 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
-  margin: 0;
-  width: 90%;
-  height: 95%;
   min-height: calc((1vw + 1vh) * 75);
   margin: 1%;
-  padding: 4em;
-  box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+  padding: 2%;
+  box-shadow: 3px 5px 20px black, 0 0 60px #8a4d0f inset;
   background: bisque;
-  filter: url(#wavy2);
 }
 
 nav {
   display: flex;
   background-color: burlywood;
-  margin: 0;
   border: 2px solid black;
+  flex-wrap: wrap;
 }
 
 nav div {
   text-decoration: none;
-  font-size: x-large;
-  margin: 0.5%;
+  font-size: xx-large;
+  margin: 0.25%;
   padding: 1%;
   color: black;
   border: 2px solid burlywood;
@@ -35,15 +31,15 @@ nav div:hover {
   background-color: lightgray;
   border: 2px dotted black;
   font-weight: bold;
+  color: darkred;
   cursor: pointer;
 }
 
 footer {
-  color: darkslateblue;
+  color: black;
   box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
-  padding: 0.5%;
+  padding: 5%;
   background-color: burlywood;
-  border: 2px dotted black;
 }
 
 footer .tiedot {
@@ -94,13 +90,13 @@ footer .tiedot a {
 }
 
 .sivu .main {
-  width: 80%;
-  border: 2px dotted black;
+  width: 75%;
   left: 50%;
   margin: 2em 1%;
   padding: 4em;
   box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
   background: burlywood;
+  flex-direction: row;
 }
 
 .ads {
