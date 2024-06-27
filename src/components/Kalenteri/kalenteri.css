@@ -1,1 +1,4 @@
-.iframe {}
+.iframe {
+	width: 100%;
+	height: auto;
+}
